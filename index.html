@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Witcher Schools</title>
+    <style>
+      body {
+        background: radial-gradient(
+          circle at 10% 20%,
+          rgb(90, 92, 106) 0%,
+          rgb(32, 45, 58) 81.3%
+        );
+      }
+      img {
+        max-width: 100%;
+      }
+      h1 {
+        text-align: center;
+        color: #e5aa25;
+        font-size: 40px;
+      }
+      h2 {
+        text-align: center;
+        color: #c1cbcb;
+        font-size: 30px;
+      }
+      p {
+        text-align: justify;
+        color: #c1cbcb;
+      }
+      .schoolWrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 20px;
+      }
+      .wolfContainer {
+        padding: 20px;
+        max-width: 100%;
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/023/147/original/Wolf_School_medallion.png?1639920370");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        position: relative;
+      }
+      .catContainer {
+        max-width: 100%;
+        padding: 20px;
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/023/148/original/The_witcher_cat_school_medallion.png?1639921439");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        position: relative;
+      }
+      .griffinContainer {
+        padding: 20px;
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/023/149/original/Tw3_griffinschool.png?1639921452");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        max-width: 100%;
+        position: relative;
+      }
+      .bearContainer {
+        max-width: 100%;
+        padding: 20px;
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/023/150/original/Bear_School_medallion.png?1639921459");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        position: relative;
+      }
+      .wolfTitle {
+        text-align: center;
+        color: beige;
+        font-weight: bolder;
+        position: absolute;
+        top: 40%;
+        left: 40%;
+      }
+      .catTitle {
+        text-align: center;
+        color: beige;
+        font-weight: bolder;
+        position: absolute;
+        top: 40%;
+        left: 40%;
+      }
+      .griffinTitle {
+        text-align: center;
+        font-weight: bolder;
+        color: beige;
+        position: absolute;
+        top: 40%;
+        left: 40%;
+      }
+      .bearTitle {
+        text-align: center;
+        font-weight: bolder;
+        color: beige;
+        position: absolute;
+        top: 40%;
+        left: 40%;
+      }
+      .wolfBio {
+        max-width: 80%;
+        text-align: justify;
+        line-height: normal;
+        position: absolute;
+        z-index: 1;
+        top: 30%;
+        left: 10%;
+        padding: 10px;
+        opacity: 0;
+        transition: all 150ms ease-in-out;
+      }
+      .wolfBio:hover {
+        opacity: 1;
+        background: blanchedalmond;
+      }
+      .catBio {
+        max-width: 80%;
+        text-align: justify;
+        line-height: normal;
+        position: absolute;
+        z-index: 1;
+        top: 30%;
+        left: 10%;
+        padding: 10px;
+        opacity: 0;
+        transition: all 150ms ease-in-out;
+      }
+      .catBio:hover {
+        opacity: 1;
+        background: blanchedalmond;
+      }
+      .griffinBio {
+        max-width: 80%;
+        text-align: justify;
+        line-height: normal;
+        position: absolute;
+        z-index: 1;
+        top: 30%;
+        left: 10%;
+        padding: 10px;
+        opacity: 0;
+        transition: all 150ms ease-in-out;
+      }
+      .griffinBio:hover {
+        opacity: 1;
+        background: blanchedalmond;
+      }
+      .bearBio {
+        max-width: 80%;
+        text-align: justify;
+        line-height: normal;
+        position: absolute;
+        z-index: 1;
+        top: 30%;
+        left: 10%;
+        padding: 10px;
+        opacity: 0;
+        transition: all 150ms ease-in-out;
+      }
+      .bearBio:hover {
+        opacity: 1;
+        background: blanchedalmond;
+      }
+      .joinButton {
+        margin: 0 auto;
+        display: block;
+        background: #e5aa25;
+        padding: 10px;
+        border: #e5aa25 solid 1px;
+        border-radius: 8px;
+        box-shadow: #c1cbcb 1px 1px 1px 1px;
+        transition: all 150ms ease-in-out;
+      }
+      .joinButton:hover {
+        background: white;
+        border: #e5aa25 solid 1px;
+      }
+      .or {
+        text-align: center;
+        color: #c1cbcb;
+      }
+      .learnButton {
+        margin: 0 auto;
+        display: block;
+        background: #e5aa25;
+        padding: 10px;
+        border: #e5aa25 solid 1px;
+        border-radius: 8px;
+        box-shadow: #c1cbcb 1px 1px 1px 1px;
+      }
+      .learnButton:hover {
+        background: white;
+        border: #e5aa25 solid 1px;
+      }
+      .author {
+        text-align: center;
+        color: blanchedalmond;
+        opacity: 0.3;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/023/146/original/150-1509757_twitter-banner-the-witcher.png?1639916982"
+      alt="witcher header image"
+    />
+    <h1><strong>THE WITCHER</strong></h1>
+    <h2><strong>- discover the witcher schools -</strong></h2>
+    <p>
+      <em>
+        The witcher schools are the organizations which train and equip
+        witchers, the itinerant monster slayers. While schools differ in mindset
+        and details of training, most of them teach equally professional
+        hunters. Headquartered in seclude locations, each one is built on the
+        blood, sweat, and tears of countless children who stood within them,
+        honing their technique and skill. Most of them had fallen up to the
+        first half of the 13th century under various human attacks, but at least
+        some of them were rebuilt and continued to function.</em
+      >
+    </p>
+    <hr />
+    <div class="schoolWrapper">
+      <div class="wolfContainer">
+        <div class="wolfTitle">School of the Wolf</div>
+        <div class="wolfBio">
+          In the days of its glory, the School of the Wolf was one of the most
+          recognized of the witcher schools. Its members gained the reputation
+          of professional and reliable monster slayers.
+        </div>
+      </div>
+      <div class="catContainer">
+        <div class="catTitle">School of the Cat</div>
+        <span class="catBio"
+          >The School of the Cat emerged not as a mere training facility, but a
+          significant piece of the local political chessboard. To win various
+          rulers' favors, masters of the school rejected the policy of
+          neutrality, sending their disciples as spies, assassins, and swords
+          for hire.</span
+        >
+      </div>
+      <div class="griffinContainer">
+        <div class="griffinTitle">School of the Griffin</div>
+        <span class="griffinBio"
+          >The Griffins kept the original "knightly" values of the witcher
+          order. They focused on magic, preparedness and flexibility. They also
+          taught their students proper etiquette. They also made sure that
+          Griffin witchers knew they had a purpose and brothers that would
+          support them.</span
+        >
+      </div>
+      <div class="bearContainer">
+        <div class="bearTitle">School of the Bear</div>
+        <span class="bearBio"
+          >The Bear witchers had little to no brotherly bonds with each other
+          and no true loyalty to their school. At the peak of their power, the
+          Bears often traveled to Skellige, both due to its amount of monsters
+          and the islanders' mindsets being akin to their own.</span
+        >
+      </div>
+    </div>
+    <br />
+    <button class="joinButton">Join a school</button>
+    <div class="or">or</div>
+    <button class="learnButton">
+      <a
+        href="https://witcher.fandom.com/wiki/Witcher_schools"
+        target="_blank"
+        style="text-decoration: none; color: black"
+        >Learn more here</a
+      >
+    </button>
+    <hr />
+    <div class="author">Coded by a.boco</div>
+    <script>
+      function join() {
+        let name = prompt("What's your name?");
+        let school = prompt("Which school would you like to join?")
+          .toLowerCase()
+          .trim();
+        if (
+          school === "wolf" ||
+          school === "cat" ||
+          school === "griffin" ||
+          school === "bear"
+        ) {
+          alert(
+            "Welcome " +
+              name +
+              " to the School of " +
+              school +
+              "! Good luck on the path!"
+          );
+        } else {
+          alert("Click on the learn more button to find your school!");
+        }
+      }
+      let joinSchool = document.querySelector(".joinButton");
+      joinSchool.addEventListener("click", join);
+    </script>
+  </body>
+</html>
